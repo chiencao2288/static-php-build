@@ -1,6 +1,6 @@
 {
-    "name": "crazywhalecc/static-php-cli-hosted"
+    "name": "chiencao2288/static-php-cli"
     "require": {
-        "crazywhalecc/static-php-cli": "dev-main"
+        "chiencao2288/static-php-cli": "dev-main"
     }
 }
