@@ -16,8 +16,6 @@ jobs:
           - "8.2"
         operating-system:
           - "ubuntu-latest"
-        extensions:
-          - bcmath,bz2,calendar,ctype,curl,dom,exif,fileinfo,filter,ftp,gd,gmp,iconv,xml,mbstring,mbregex,mysqlnd,openssl,pcntl,pdo,pdo_mysql,pdo_sqlite,phar,posix,redis,session,simplexml,soap,sockets,sqlite3,tokenizer,xmlwriter,xmlreader,zlib,zip
     
     steps:
       - name: "Checkout"
@@ -61,7 +59,7 @@ jobs:
       - name: "Download sources"
         env:
           GITHUB_TOKEN: ${{ secrets.S_GITHUB_TOKEN }}
-        run: ./spc download --with-php=${{ matrix.php-version }} --all
+        run: ./spc download --with-php=${{ matrix.php-version }} --with-extensions=bcmath,bz2,calendar,ctype,curl,dom,exif,fileinfo,filter,ftp,gd,gmp,iconv,xml,mbstring,mbregex,mysqlnd,openssl,pcntl,pdo,pdo_mysql,pdo_sqlite,phar,posix,redis,session,simplexml,soap,sockets,sqlite3,tokenizer,xmlwriter,xmlreader,zlib,zip,mongodb
 
       - name: "Build library: ${{ matrix.library }}"
         run: |
